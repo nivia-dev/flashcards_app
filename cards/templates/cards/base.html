@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Flashcards</title>
+    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+</head>
+<style>
+    
+    :root {
+        --color0: #f5e9b8;
+        --color1: #f5d688;
+        --color2: #e0a81b;
+        --color3: #ad8115;
+        --color4: #615129;
+        --color5: #3f2f08;
+        
+    }
+    
+    mark {
+        background-color: var(--color1);
+    }
+    
+    body {
+        background-color: var(--color0);
+    }
+
+    header.hednav {
+        background-image: linear-gradient(to bottom, var(--color0), var(--color2));
+    }
+
+    article {
+        background-color: var(--color2); /*var(--marked); muda a cor das caixa */
+        border: 1px solid var(--color5);
+        border-radius: 5px;
+        padding: 1em;
+        margin: 1em 0;
+    }
+
+    h2 {
+        text-align: center;
+    }
+
+    h2, h4 {
+        margin-top: 0;
+    }
+
+    hr {
+        background: var(--color2); /*muda cor da linha que separa o título da caixa */
+        border-color: var(--color5);
+    }
+
+    button,
+    a[role="button"] {
+        color: white; /* muda a cor da letra de dentro dos botões*/
+        text-decoration: none;
+        background-color: var(--color4);
+    }
+
+    input.know {
+        background-color: var(--color4);
+    }
+
+    input, select, textarea {
+        width: 100%;
+    }
+</style>
+<body>
+    <header class="hednav">
+        <h1>Flashcards App</h1>
+        {% include "cards/navigation.html" %}
+    </header>
+    <main>
+        {% block content %}
+            <h2>Welcome to your Flashcards app!</h2>
+        {% endblock content %}
+    </main>
+</body>
+</html>
